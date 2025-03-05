@@ -2,7 +2,7 @@
 
 mkdir -p apps/demo-e2e/src
 
-for i in {1..50}
+for i in {11..20}
 do
   cat > "apps/demo-e2e/src/example-${i}.spec.ts" << EOF
 import { test, expect } from '@playwright/test';
