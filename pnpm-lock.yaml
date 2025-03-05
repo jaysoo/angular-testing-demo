@@ -39,6 +39,12 @@ importers:
         specifier: ~0.15.0
         version: 0.15.0
     devDependencies:
+      '@analogjs/vite-plugin-angular':
+        specifier: ~1.14.0
+        version: 1.14.0(z646obyascoejp4t5kiffbst4e)
+      '@analogjs/vitest-angular':
+        specifier: ~1.10.0
+        version: 1.10.3(@analogjs/vite-plugin-angular@1.14.0(z646obyascoejp4t5kiffbst4e))(vitest@1.6.1)
       '@angular-devkit/build-angular':
         specifier: ~19.1.0
         version: 19.1.9(@angular/compiler-cli@19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@rspack/core@1.2.7(@swc/helpers@0.5.15))(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@18.16.9)(chokidar@4.0.3)(jest-environment-jsdom@29.7.0)(jest@29.7.0(@types/node@18.16.9)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@18.16.9)(typescript@5.7.3)))(jiti@1.21.7)(stylus@0.64.0)(typescript@5.7.3)(vite@5.4.14(@types/node@18.16.9)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0))(yaml@2.7.0)
@@ -114,6 +120,9 @@ importers:
       '@typescript-eslint/utils':
         specifier: ^8.19.0
         version: 8.26.0(eslint@9.21.0(jiti@1.21.7))(typescript@5.7.3)
+      '@vitest/coverage-v8':
+        specifier: ^1.0.4
+        version: 1.6.1(vitest@1.6.1)
       '@vitest/ui':
         specifier: ^1.3.1
         version: 1.6.1(vitest@1.6.1)
@@ -138,6 +147,9 @@ importers:
       jest-preset-angular:
         specifier: ~14.4.0
         version: 14.4.2(@angular/compiler-cli@19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser-dynamic@19.1.8(@angular/common@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0))(@angular/platform-browser@19.1.8(@angular/animations@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@angular/common@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0))(rxjs@7.8.2))(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0))))(@babel/core@7.26.9)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.26.9))(jest@29.7.0(@types/node@18.16.9)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@18.16.9)(typescript@5.7.3)))(typescript@5.7.3)
+      jsdom:
+        specifier: ~22.1.0
+        version: 22.1.0
       nx:
         specifier: 20.4.6
         version: 20.4.6(@swc-node/register@1.9.2(@swc/core@1.5.29(@swc/helpers@0.5.15))(@swc/types@0.1.19)(typescript@5.7.3))(@swc/core@1.5.29(@swc/helpers@0.5.15))
@@ -164,7 +176,7 @@ importers:
         version: 5.4.14(@types/node@18.16.9)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
       vitest:
         specifier: ^1.3.1
-        version: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@20.0.3)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
+        version: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@22.1.0)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
 
 packages:
 
@@ -174,6 +186,24 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@analogjs/vite-plugin-angular@1.14.0':
+    resolution: {integrity: sha512-SNoDN3zjOlDtknfXqKX7RxR1kcnwJ0QI0Q6wzgMdCbP6re8przInF2i/2axmtYBmInPYorGwI5MmtoJeJZCg0A==}
+    peerDependencies:
+      '@angular-devkit/build-angular': ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@angular/build': ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@angular-devkit/build-angular':
+        optional: true
+      '@angular/build':
+        optional: true
+
+  '@analogjs/vitest-angular@1.10.3':
+    resolution: {integrity: sha512-b05ALlS8S9JH5kJ8ezu1E0Y0zEi9SueEMKEI6PGMP5+y06hGg5UIjoI3U1Lxr3op3NLnN5daNXzpcWWY7x8mLQ==}
+    peerDependencies:
+      '@analogjs/vite-plugin-angular': '*'
+      '@angular-devkit/architect': ^0.1500.0 || ^0.1600.0 || ^0.1700.0 || ^0.1800.0 || ^0.1900.0 || next
+      vitest: ^1.3.1 || ^2.0.0
 
   '@angular-devkit/architect@0.1901.9':
     resolution: {integrity: sha512-Z5H7s9X2bIWTvhGllO7kDqbgNnn8r78senlLquyc8sMIC1vQ4EQE+nzUSDtfp7tHqWeiK8Gk7eTWTL+UM9rXmw==}
@@ -2862,6 +2892,9 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
 
+  '@ts-morph/common@0.22.0':
+    resolution: {integrity: sha512-HqNBuV/oIlMKdkLshXd1zKBqNQCsuPEsgQOkfFQ/eUKjRlwndXW1AjN9LVkBEIukm00gGXSRmfkl0Wv5VXLnlw==}
+
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
 
@@ -2996,6 +3029,9 @@ packages:
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
 
+  '@types/unist@3.0.3':
+    resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
+
   '@types/ws@8.18.0':
     resolution: {integrity: sha512-8svvI3hMyvN0kKCJMvTJP/x6Y/EoQbepff882wL+Sn5QsXb3etnamgrJq4isrBxSJj5L2AuXcI0+bgkoAXGUJw==}
 
@@ -3057,6 +3093,11 @@ packages:
     engines: {node: '>=14.21.3'}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
+
+  '@vitest/coverage-v8@1.6.1':
+    resolution: {integrity: sha512-6YeRZwuO4oTGKxD3bijok756oktHSIm3eczVVzNe3scqzuhLwltIF3S9ZL/vwOVIpURmU6SnZhziXXAfw8/Qlw==}
+    peerDependencies:
+      vitest: 1.6.1
 
   '@vitest/expect@1.6.1':
     resolution: {integrity: sha512-jXL+9+ZNIJKruofqXuuTClf44eSpcHlgj3CiuNihUF3Ioujtmc0zIa3UJOW5RjDK1YLBJZnWBlPuqhYycLioog==}
@@ -3594,6 +3635,9 @@ packages:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
 
+  code-block-writer@12.0.0:
+    resolution: {integrity: sha512-q4dMFMlXtKR3XNBHyMHt/3pwYNA69EDk00lloMOaaUMKPUXBw6lpXtbu3MMVG6/uOihGnRDOlkyqsONEUj60+w==}
+
   collect-v8-coverage@1.0.2:
     resolution: {integrity: sha512-lHl4d5/ONEbLlJvaJNtsF/Lz+WvB07u2ycqTYbdrq7UypDXailES4valYb2eWiJFxZlVmpGekfqoxQhzyFdT4Q==}
 
@@ -3835,9 +3879,17 @@ packages:
     resolution: {integrity: sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==}
     engines: {node: '>=8'}
 
+  cssstyle@3.0.0:
+    resolution: {integrity: sha512-N4u2ABATi3Qplzf0hWbVCdjenim8F3ojEXpBDF5hBpjzW182MjNGLqfmQ0SkSPeQ+V86ZXgeH8aXj6kayd4jgg==}
+    engines: {node: '>=14'}
+
   data-urls@3.0.2:
     resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
     engines: {node: '>=12'}
+
+  data-urls@4.0.0:
+    resolution: {integrity: sha512-/mMTei/JXPqvFqQtfyTowxmJVwr2PVAeCcDxyFf6LhoOu/09TX2OX3kb2wzi4DMXcfj4OItwDOnhl5oziPnT6g==}
+    engines: {node: '>=14'}
 
   date-format@4.0.14:
     resolution: {integrity: sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==}
@@ -4903,6 +4955,10 @@ packages:
     resolution: {integrity: sha512-n3s8EwkdFIJCG3BPKBYvskgXGoy88ARzvegkitk60NxRdwltLOTaH7CUiMRXvwYorl0Q712iEjcWB+fK/MrWVw==}
     engines: {node: '>=10'}
 
+  istanbul-lib-source-maps@5.0.6:
+    resolution: {integrity: sha512-yg2d+Em4KizZC5niWhQaIomgf5WlL4vOOjZ5xGCmF8SnPE/mDWWXgvRExdcpCgh9lLRRa1/fSYp2ymmbJ1pI+A==}
+    engines: {node: '>=10'}
+
   istanbul-reports@3.1.7:
     resolution: {integrity: sha512-BewmUXImeuRk2YY0PVbxgKAysvhRPUQE0h5QRM++nVWyubKGV0l8qQ5op8+B2DOmwSe63Jivj0BjkPQVf8fP5g==}
     engines: {node: '>=8'}
@@ -5091,6 +5147,15 @@ packages:
   jsdom@20.0.3:
     resolution: {integrity: sha512-SYhBvTh89tTfCD/CRdSOm13mOBa42iTaTyfyEWBdKcGdPxPtLFBXuHR8XHb33YNYaP+lLbmSvBTsnoesCNJEsQ==}
     engines: {node: '>=14'}
+    peerDependencies:
+      canvas: ^2.5.0
+    peerDependenciesMeta:
+      canvas:
+        optional: true
+
+  jsdom@22.1.0:
+    resolution: {integrity: sha512-/9AVW7xNbsBv6GfWho4TTNjEo9fe6Zhf9O7s0Fhhr3u+awPwAJMKwAMXnkk5vBxflqLW9hTHX/0cs+P3gW+cQw==}
+    engines: {node: '>=16'}
     peerDependencies:
       canvas: ^2.5.0
     peerDependenciesMeta:
@@ -5336,6 +5401,9 @@ packages:
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
+
+  magicast@0.3.5:
+    resolution: {integrity: sha512-L0WhttDl+2BOsybvEOLK7fW3UA0OQ0IQ2d6Zl2x/a6vVRs3bAY0ECOSHHeL5jD+SbOpOCUEi0y1DgHEn9Qn1AQ==}
 
   make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -5829,6 +5897,9 @@ packages:
   parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
     engines: {node: '>= 0.8'}
+
+  path-browserify@1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
 
   path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
@@ -6383,6 +6454,9 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
+  rrweb-cssom@0.6.0:
+    resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
+
   run-applescript@7.0.0:
     resolution: {integrity: sha512-9by4Ij99JUr/MCFBUkDKLWK3G9HVXmabKz9U5MlIAIuvuzkiOicRYs8XJLxX+xahD+mLiiCYDqF9dKAgtzKP1A==}
     engines: {node: '>=18'}
@@ -6900,6 +6974,10 @@ packages:
     resolution: {integrity: sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA==}
     engines: {node: '>=12'}
 
+  tr46@4.1.1:
+    resolution: {integrity: sha512-2lv/66T7e5yNyhAAC4NaKe5nVavzuGJQVVtRYLyQ2OI8tsJ61PMLlelehb0wi2Hx6+hT/OJUWZcw8MjlSRnxvw==}
+    engines: {node: '>=14'}
+
   tree-dump@1.0.2:
     resolution: {integrity: sha512-dpev9ABuLWdEubk+cIaI9cHwRNNDjkBBLXTwI4UCUFdQ5xXKqNXoK4FEciw/vxf+NQ7Cb7sGUyeUtORvHIdRXQ==}
     engines: {node: '>=10.0'}
@@ -6946,6 +7024,9 @@ packages:
     peerDependencies:
       typescript: '*'
       webpack: ^5.0.0
+
+  ts-morph@21.0.1:
+    resolution: {integrity: sha512-dbDtVdEAncKctzrVZ+Nr7kHpHkv+0JDJb2MjjpBaj8bFeCkePU9rHfMklmhuLFnpeq/EJZk2IhStY6NzqgjOkg==}
 
   ts-node@10.9.1:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
@@ -7054,6 +7135,9 @@ packages:
     resolution: {integrity: sha512-9OdaqO5kwqR+1kVgHAhsp5vPNU0hnxRa26rBFNfNgM7M6pNtgzeBn3s/xbyCQL3dcjzOatcef6UUHpB/6MaETg==}
     engines: {node: ^18.17.0 || >=20.5.0}
 
+  unist-util-stringify-position@4.0.0:
+    resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==}
+
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
@@ -7121,6 +7205,12 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  vfile-message@4.0.2:
+    resolution: {integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==}
+
+  vfile@6.0.3:
+    resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
   vite-node@1.6.1:
     resolution: {integrity: sha512-YAXkfvGtuTzwWbDSACdJSg4A4DZiAqckWe90Zapc/sEX3XvHcw1NdurM/6od8J207tSDqNbSsgdCacBgvJKFuA==}
@@ -7338,6 +7428,10 @@ packages:
     resolution: {integrity: sha512-RKT8HExMpoYx4igMiVMY83lN6UeITKJlBQ+vR/8ZJ8OCdSiN3RwCq+9gH0+Xzj0+5IrM6i4j/6LuvzbZIQgEcQ==}
     engines: {node: '>=12'}
 
+  whatwg-url@12.0.1:
+    resolution: {integrity: sha512-Ed/LrqB8EPlGxjS+TrsXcpUond1mhccS3pchLhzSgPCnTimUCKj3IZE75pAs5m6heB2U2TMerKFUXheyHY+VDQ==}
+    engines: {node: '>=14'}
+
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
 
@@ -7483,6 +7577,19 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@analogjs/vite-plugin-angular@1.14.0(z646obyascoejp4t5kiffbst4e)':
+    dependencies:
+      ts-morph: 21.0.1
+      vfile: 6.0.3
+    optionalDependencies:
+      '@angular-devkit/build-angular': 19.1.9(@angular/compiler-cli@19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@rspack/core@1.2.7(@swc/helpers@0.5.15))(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@18.16.9)(chokidar@4.0.3)(jest-environment-jsdom@29.7.0)(jest@29.7.0(@types/node@18.16.9)(babel-plugin-macros@3.1.0)(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@18.16.9)(typescript@5.7.3)))(jiti@1.21.7)(stylus@0.64.0)(typescript@5.7.3)(vite@5.4.14(@types/node@18.16.9)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0))(yaml@2.7.0)
+      '@angular/build': 19.1.9(@angular/compiler-cli@19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@types/node@18.16.9)(chokidar@4.0.3)(jiti@1.21.7)(less@4.1.3)(postcss@8.5.3)(stylus@0.64.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+
+  '@analogjs/vitest-angular@1.10.3(@analogjs/vite-plugin-angular@1.14.0(z646obyascoejp4t5kiffbst4e))(vitest@1.6.1)':
+    dependencies:
+      '@analogjs/vite-plugin-angular': 1.14.0(z646obyascoejp4t5kiffbst4e)
+      vitest: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@22.1.0)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
 
   '@angular-devkit/architect@0.1901.9(chokidar@4.0.3)':
     dependencies:
@@ -7689,6 +7796,55 @@ snapshots:
     dependencies:
       '@angular/core': 19.1.8(rxjs@7.8.2)(zone.js@0.15.0)
       tslib: 2.8.1
+
+  '@angular/build@19.1.9(@angular/compiler-cli@19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@types/node@18.16.9)(chokidar@4.0.3)(jiti@1.21.7)(less@4.1.3)(postcss@8.5.3)(stylus@0.64.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)':
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@angular-devkit/architect': 0.1901.9(chokidar@4.0.3)
+      '@angular-devkit/core': 19.1.9(chokidar@4.0.3)
+      '@angular/compiler': 19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0))
+      '@angular/compiler-cli': 19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3)
+      '@babel/core': 7.26.0
+      '@babel/helper-annotate-as-pure': 7.25.9
+      '@babel/helper-split-export-declaration': 7.24.7
+      '@babel/plugin-syntax-import-attributes': 7.26.0(@babel/core@7.26.0)
+      '@inquirer/confirm': 5.1.1(@types/node@18.16.9)
+      '@vitejs/plugin-basic-ssl': 1.2.0(vite@6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.1.3)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0))
+      beasties: 0.2.0
+      browserslist: 4.24.4
+      esbuild: 0.24.2
+      fast-glob: 3.3.3
+      https-proxy-agent: 7.0.6
+      istanbul-lib-instrument: 6.0.3
+      listr2: 8.2.5
+      magic-string: 0.30.17
+      mrmime: 2.0.0
+      parse5-html-rewriting-stream: 7.0.0
+      picomatch: 4.0.2
+      piscina: 4.8.0
+      rollup: 4.30.1
+      sass: 1.83.1
+      semver: 7.6.3
+      typescript: 5.7.3
+      vite: 6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.1.3)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0)
+      watchpack: 2.4.2
+    optionalDependencies:
+      less: 4.1.3
+      lmdb: 3.2.2
+      postcss: 8.5.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - chokidar
+      - jiti
+      - lightningcss
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+    optional: true
 
   '@angular/build@19.1.9(@angular/compiler-cli@19.1.8(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(typescript@5.7.3))(@angular/compiler@19.1.8(@angular/core@19.1.8(rxjs@7.8.2)(zone.js@0.15.0)))(@types/node@18.16.9)(chokidar@4.0.3)(jiti@1.21.7)(less@4.2.1)(postcss@8.4.49)(stylus@0.64.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)':
     dependencies:
@@ -10636,7 +10792,7 @@ snapshots:
       minimatch: 9.0.3
       tsconfig-paths: 4.2.0
       vite: 5.4.14(@types/node@18.16.9)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
-      vitest: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@20.0.3)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
+      vitest: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@22.1.0)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -11125,6 +11281,13 @@ snapshots:
 
   '@trysound/sax@0.2.0': {}
 
+  '@ts-morph/common@0.22.0':
+    dependencies:
+      fast-glob: 3.3.3
+      minimatch: 9.0.5
+      mkdirp: 3.0.1
+      path-browserify: 1.0.1
+
   '@tsconfig/node10@1.0.11': {}
 
   '@tsconfig/node12@1.0.11': {}
@@ -11290,6 +11453,8 @@ snapshots:
 
   '@types/tough-cookie@4.0.5': {}
 
+  '@types/unist@3.0.3': {}
+
   '@types/ws@8.18.0':
     dependencies:
       '@types/node': 18.16.9
@@ -11381,9 +11546,33 @@ snapshots:
     dependencies:
       vite: 5.4.14(@types/node@18.16.9)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
 
+  '@vitejs/plugin-basic-ssl@1.2.0(vite@6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.1.3)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0))':
+    dependencies:
+      vite: 6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.1.3)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0)
+    optional: true
+
   '@vitejs/plugin-basic-ssl@1.2.0(vite@6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0))':
     dependencies:
       vite: 6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0)
+
+  '@vitest/coverage-v8@1.6.1(vitest@1.6.1)':
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@bcoe/v8-coverage': 0.2.3
+      debug: 4.4.0
+      istanbul-lib-coverage: 3.2.2
+      istanbul-lib-report: 3.0.1
+      istanbul-lib-source-maps: 5.0.6
+      istanbul-reports: 3.1.7
+      magic-string: 0.30.17
+      magicast: 0.3.5
+      picocolors: 1.1.1
+      std-env: 3.8.1
+      strip-literal: 2.1.1
+      test-exclude: 6.0.0
+      vitest: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@22.1.0)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
+    transitivePeerDependencies:
+      - supports-color
 
   '@vitest/expect@1.6.1':
     dependencies:
@@ -11416,7 +11605,7 @@ snapshots:
       pathe: 1.1.2
       picocolors: 1.1.1
       sirv: 2.0.4
-      vitest: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@20.0.3)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
+      vitest: 1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@22.1.0)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0)
 
   '@vitest/utils@1.6.1':
     dependencies:
@@ -12072,6 +12261,8 @@ snapshots:
 
   co@4.6.0: {}
 
+  code-block-writer@12.0.0: {}
+
   collect-v8-coverage@1.0.2: {}
 
   color-convert@2.0.1:
@@ -12338,11 +12529,21 @@ snapshots:
     dependencies:
       cssom: 0.3.8
 
+  cssstyle@3.0.0:
+    dependencies:
+      rrweb-cssom: 0.6.0
+
   data-urls@3.0.2:
     dependencies:
       abab: 2.0.6
       whatwg-mimetype: 3.0.0
       whatwg-url: 11.0.0
+
+  data-urls@4.0.0:
+    dependencies:
+      abab: 2.0.6
+      whatwg-mimetype: 3.0.0
+      whatwg-url: 12.0.1
 
   date-format@4.0.14: {}
 
@@ -13487,6 +13688,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  istanbul-lib-source-maps@5.0.6:
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.25
+      debug: 4.4.0
+      istanbul-lib-coverage: 3.2.2
+    transitivePeerDependencies:
+      - supports-color
+
   istanbul-reports@3.1.7:
     dependencies:
       html-escaper: 2.0.2
@@ -13910,6 +14119,36 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  jsdom@22.1.0:
+    dependencies:
+      abab: 2.0.6
+      cssstyle: 3.0.0
+      data-urls: 4.0.0
+      decimal.js: 10.5.0
+      domexception: 4.0.0
+      form-data: 4.0.2
+      html-encoding-sniffer: 3.0.0
+      http-proxy-agent: 5.0.0
+      https-proxy-agent: 5.0.1
+      is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.18
+      parse5: 7.2.1
+      rrweb-cssom: 0.6.0
+      saxes: 6.0.0
+      symbol-tree: 3.2.4
+      tough-cookie: 4.1.4
+      w3c-xmlserializer: 4.0.0
+      webidl-conversions: 7.0.0
+      whatwg-encoding: 2.0.0
+      whatwg-mimetype: 3.0.0
+      whatwg-url: 12.0.1
+      ws: 8.18.1
+      xml-name-validator: 4.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
   jsesc@3.0.2: {}
 
   jsesc@3.1.0: {}
@@ -14211,6 +14450,12 @@ snapshots:
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  magicast@0.3.5:
+    dependencies:
+      '@babel/parser': 7.26.9
+      '@babel/types': 7.26.9
+      source-map-js: 1.2.1
 
   make-dir@2.1.0:
     dependencies:
@@ -14775,6 +15020,8 @@ snapshots:
 
   parseurl@1.3.3: {}
 
+  path-browserify@1.0.1: {}
+
   path-exists@4.0.0: {}
 
   path-exists@5.0.0: {}
@@ -15324,6 +15571,8 @@ snapshots:
       '@rollup/rollup-win32-ia32-msvc': 4.34.8
       '@rollup/rollup-win32-x64-msvc': 4.34.8
       fsevents: 2.3.3
+
+  rrweb-cssom@0.6.0: {}
 
   run-applescript@7.0.0: {}
 
@@ -15892,6 +16141,10 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
+  tr46@4.1.1:
+    dependencies:
+      punycode: 2.3.1
+
   tree-dump@1.0.2(tslib@2.8.1):
     dependencies:
       tslib: 2.8.1
@@ -15931,6 +16184,11 @@ snapshots:
       source-map: 0.7.4
       typescript: 5.7.3
       webpack: 5.98.0(@swc/core@1.5.29(@swc/helpers@0.5.15))
+
+  ts-morph@21.0.1:
+    dependencies:
+      '@ts-morph/common': 0.22.0
+      code-block-writer: 12.0.0
 
   ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(@types/node@18.16.9)(typescript@5.7.3):
     dependencies:
@@ -16034,6 +16292,10 @@ snapshots:
     dependencies:
       imurmurhash: 0.1.4
 
+  unist-util-stringify-position@4.0.0:
+    dependencies:
+      '@types/unist': 3.0.3
+
   universalify@0.1.2: {}
 
   universalify@0.2.0: {}
@@ -16086,6 +16348,16 @@ snapshots:
 
   vary@1.1.2: {}
 
+  vfile-message@4.0.2:
+    dependencies:
+      '@types/unist': 3.0.3
+      unist-util-stringify-position: 4.0.0
+
+  vfile@6.0.3:
+    dependencies:
+      '@types/unist': 3.0.3
+      vfile-message: 4.0.2
+
   vite-node@1.6.1(@types/node@18.16.9)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0):
     dependencies:
       cac: 6.7.14
@@ -16117,6 +16389,22 @@ snapshots:
       stylus: 0.64.0
       terser: 5.37.0
 
+  vite@6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.1.3)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0):
+    dependencies:
+      esbuild: 0.24.2
+      postcss: 8.5.3
+      rollup: 4.34.8
+    optionalDependencies:
+      '@types/node': 18.16.9
+      fsevents: 2.3.3
+      jiti: 1.21.7
+      less: 4.1.3
+      sass: 1.83.1
+      stylus: 0.64.0
+      terser: 5.37.0
+      yaml: 2.7.0
+    optional: true
+
   vite@6.0.11(@types/node@18.16.9)(jiti@1.21.7)(less@4.2.1)(sass@1.83.1)(stylus@0.64.0)(terser@5.37.0)(yaml@2.7.0):
     dependencies:
       esbuild: 0.24.2
@@ -16132,7 +16420,7 @@ snapshots:
       terser: 5.37.0
       yaml: 2.7.0
 
-  vitest@1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@20.0.3)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0):
+  vitest@1.6.1(@types/node@18.16.9)(@vitest/ui@1.6.1)(jsdom@22.1.0)(less@4.1.3)(sass@1.85.1)(stylus@0.64.0)(terser@5.37.0):
     dependencies:
       '@vitest/expect': 1.6.1
       '@vitest/runner': 1.6.1
@@ -16157,7 +16445,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 18.16.9
       '@vitest/ui': 1.6.1(vitest@1.6.1)
-      jsdom: 20.0.3
+      jsdom: 22.1.0
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -16358,6 +16646,11 @@ snapshots:
   whatwg-url@11.0.0:
     dependencies:
       tr46: 3.0.0
+      webidl-conversions: 7.0.0
+
+  whatwg-url@12.0.1:
+    dependencies:
+      tr46: 4.1.1
       webidl-conversions: 7.0.0
 
   whatwg-url@5.0.0:
